@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import AboutMe from './js/AboutMe';
-import Skills from './js/Skills'
-import Projects from './js/Projects'
-import Home from './js/Home';
+import React, { useState } from "react";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import AboutMe from "./assets/js/AboutMe";
+import Skills from "./assets/js/Skills";
+import Projects from "./assets/js/Projects";
+import Home from "./assets/js/Home";
 
 const App = () => {
   const [openMenu, setopenMenu] = useState(false);
-  const [currentPage, setcurrentPage] = useState('Início');
+  const [currentPage, setcurrentPage] = useState("Início");
 
   const toggleMenu = () => {
     setopenMenu(!openMenu);
@@ -21,13 +22,13 @@ const App = () => {
   // Renderização condicional da página atual
   const renderPage = () => {
     switch (currentPage) {
-      case 'Início':
+      case "Início":
         return <Home />;
-      case 'Sobre Mim':
+      case "Sobre Mim":
         return <AboutMe />;
-      case 'Habilidades':
+      case "Habilidades":
         return <Skills />;
-      case 'Projetos':
+      case "Projetos":
         return <Projects />;
       default:
         return null;
@@ -47,16 +48,28 @@ const App = () => {
       {/* Menu */}
       {openMenu && (
         <View style={styles.menu}>
-          <TouchableOpacity style={styles.menuItem} onPress={() => navigateTo('Início')}>
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={() => navigateTo("Início")}
+          >
             <Text style={styles.menuItemText}>Início</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem} onPress={() => navigateTo('Sobre Mim')}>
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={() => navigateTo("Sobre Mim")}
+          >
             <Text style={styles.menuItemText}>Sobre Mim</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem} onPress={() => navigateTo('Habilidades')}>
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={() => navigateTo("Habilidades")}
+          >
             <Text style={styles.menuItemText}>Habildiades</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem} onPress={() => navigateTo('Projetos')}>
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={() => navigateTo("Projetos")}
+          >
             <Text style={styles.menuItemText}>Projetos</Text>
           </TouchableOpacity>
         </View>
@@ -66,11 +79,11 @@ const App = () => {
       <View style={styles.content}>{renderPage()}</View>
 
       {/* Footer */}
-      {/* <View style={styles.footer}>
-        <TouchableOpacity onPress={() => navigateTo('Início')}>
-        
+      <View style={styles.footer}>
+        <TouchableOpacity style={styles.footerIcon} onPress={() => navigateTo("Início")}>
+          <MaterialCommunityIcons name="home-circle" size={46} color="black" />
         </TouchableOpacity>
-      </View> */}
+      </View>
     </View>
   );
 };
@@ -78,26 +91,26 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     paddingTop: 24,
   },
   header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     padding: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    borderBottomColor: "#ccc",
   },
   titulo: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   menuIcon: {
     padding: 10,
   },
   menu: {
-    backgroundColor: '#f9f9f9',
+    backgroundColor: "#f9f9f9",
     padding: 10,
   },
   menuItem: {
@@ -105,24 +118,19 @@ const styles = StyleSheet.create({
   },
   menuItemText: {
     fontSize: 16,
-    textAlign: 'right',
+    textAlign: "right",
   },
   content: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
- /*  page: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  textpage: {
-    fontSize: 18,
-  }, */
   footer: {
-    alignContent: 'center',
-  }
+    borderTopWidth: 1,
+    borderTopColor: "#ccc",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
 
 export default App;
