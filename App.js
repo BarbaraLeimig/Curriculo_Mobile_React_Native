@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: "#ccc",
+    backgroundColor: "rgb(245,245,245)",
   },
   titulo: {
     fontSize: 20,
@@ -130,6 +131,7 @@ const styles = StyleSheet.create({
     borderTopColor: "#ccc",
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "rgb(245,245,245)",
   },
 });
 
