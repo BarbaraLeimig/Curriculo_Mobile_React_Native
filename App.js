@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import AboutMe from "./assets/js/AboutMe";
+import Education from "./assets/js/Education"
 import Skills from "./assets/js/Skills";
 import Projects from "./assets/js/Projects";
 import Home from "./assets/js/Home";
@@ -26,6 +27,8 @@ const App = () => {
         return <Home />;
       case "Sobre Mim":
         return <AboutMe />;
+      case "Formação":
+        return <Education />;
       case "Habilidades":
         return <Skills />;
       case "Projetos":
@@ -59,6 +62,12 @@ const App = () => {
             onPress={() => navigateTo("Sobre Mim")}
           >
             <Text style={styles.menuItemText}>Sobre Mim</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.menuItem}
+            onPress={() => navigateTo("Formação")}
+          >
+            <Text style={styles.menuItemText}>Formação</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.menuItem}
