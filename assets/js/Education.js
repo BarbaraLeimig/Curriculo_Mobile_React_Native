@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const App = () => {
+const Education = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Formações</Text>
@@ -72,4 +72,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Education;
