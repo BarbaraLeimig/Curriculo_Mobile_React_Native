@@ -36,10 +36,11 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: "bold",
     color: "#333",
     marginBottom: 20,
+    textAlign: "center",
   },
   flexContainer: {
     flex: 1,
