@@ -1,21 +1,30 @@
-// SobreRestaurante.js
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
-const AboutMe = () => {
+const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Sobre Mim</Text>
-      <Text style={styles.info}>
-        Sou uma profissional em transição de carreira, com formação em
-        Odontologia. Atualmente curso Análise e Desenvolvimento de Sistemas e
-        faço estágio na área de Tecnologia trabalhando com .NET para
-        desenvolvimento web. Sou apaixonada pela área e movida pela curiosidade,
-        o que me impulsiona a buscar novos desafios e oportunidades para
-        adiquirir conhecimento. Minha experiência prévia como Dentista me
-        proporcionou desenvolver habilidades interpessoais de comunicação,
-        adaptabilidade e gestão de tempo.
-      </Text>
+      <Text style={styles.title}>Formações</Text>
+      <View style={styles.flexContainer}>
+        <View style={styles.containerEducation}>
+          <Text style={styles.titleEducation}>Análise e Desenvolvimento de Sistemas</Text>
+          <Text style={styles.info}>
+          02/2023 – Atual | Faculdade SENAC Pernambuco
+          </Text>
+        </View>
+        <View style={styles.containerEducation}>
+          <Text style={styles.titleEducation}>Residência em Odontopediatria com Ênfase em Pacientes com Deficiência</Text>
+          <Text style={styles.info}>
+          03/2020 – 02/2022 | IMIP
+          </Text>
+        </View>
+        <View style={styles.containerEducation}>
+          <Text style={styles.titleEducation}>Graduação em Odontologia</Text>
+          <Text style={styles.info}>
+            02/2014 – 12/2018 | UFPE
+          </Text>
+        </View>
+      </View>
     </View>
   );
 };
@@ -23,21 +32,44 @@ const AboutMe = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: "#f9f9f9",
     padding: 20,
   },
-  titulo: {
-    fontSize: 30,
+  title: {
+    fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 10,
+    color: "#333",
+    marginBottom: 20,
+  },
+  flexContainer: {
+    flex: 1,
+  },
+  containerEducation: {
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    padding: 15,
+    marginBottom: 20,
+    borderWidth: 1,
+    borderColor: "#ddd",
+    shadowColor: "#000",
+    shadowRadius: 5,
+    elevation: 3,
+    flex: 1,
+    justifyContent: "center", 
+    alignItems: "center", 
+  },
+  titleEducation: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#555",
+    marginBottom: 5,
   },
   info: {
-    fontSize: 18,
-    margin: 10,
-    textAlign: "justify",
-    color: "#444",
+    fontSize: 16,
+    lineHeight: 22,
+    color: "#666",
+    textAlign: "center",
   },
 });
 
-export default AboutMe;
+export default App;
