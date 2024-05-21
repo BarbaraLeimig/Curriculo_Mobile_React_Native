@@ -1,4 +1,3 @@
-// SobreRestaurante.js
 import React from "react";
 import {
   View,
@@ -46,31 +45,45 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#f5f5f5",
+    padding: 20,
   },
   title: {
     fontSize: 32,
     fontWeight: "bold",
-    marginTop: 45,
-    marginBottom: 5,
+    marginTop: 20,
+    marginBottom: 10,
+    color: "#333",
   },
   info: {
     fontSize: 20,
-    marginBottom: 10,
+    marginBottom: 20,
+    color: "#666",
   },
   homeImage: {
     width: 200,
     height: 200,
     borderRadius: 100,
     resizeMode: "cover",
+    borderWidth: 2,
+    borderColor: "#ddd",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 5,
   },
   iconContainer: {
-    marginTop: 15,
     flexDirection: "row",
-    alignItens: "baseline",
+    marginTop: 20,
   },
   icon: {
-    marginRight: 25,
-    marginLeft: 25,
+    marginHorizontal: 15,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 5,
   },
 });
 
