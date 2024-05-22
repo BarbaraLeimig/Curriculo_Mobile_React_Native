@@ -1,4 +1,3 @@
-// Projects.js
 import React from "react";
 import {
   View,
@@ -14,7 +13,7 @@ const projects = [
   {
     title: "Sistema de Estacionamento",
     description:
-      "Projeto cosole desenvolvido em C# e .NET para apresentação na entrevista do atual estágio",
+      "Projeto console desenvolvido em C# e .NET para apresentação na entrevista do atual estágio",
     image: require("../imgs/sistema_estacionamento.png"),
     githubUrl:
       "https://github.com/BarbaraLeimig/Sistema-Estacionamento-NET-desafio.git",
@@ -37,7 +36,7 @@ const projects = [
   {
     title: "Short Videos App",
     description:
-      "Projeto web desenvolvido em Javascript e React, com integração ao banco de dadoas Firebase, para criação de uma interface de aplicativo de vídeos curtos",
+      "Projeto web desenvolvido em Javascript e React, com integração ao banco de dados Firebase, para criação de uma interface de aplicativo de vídeos curtos",
     image: require("../imgs/shortvideosapp.png"),
     githubUrl:
       "https://github.com/BarbaraLeimig/Projeto_Interface_ShortVideosApp.git",
@@ -53,30 +52,37 @@ const projects = [
 
 const Projects = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Projetos</Text>
-      {projects.map((project, index) => (
-        <View key={index} style={styles.projectContainer}>
-          <Image source={project.image} style={styles.projectImage} />
-          <Text style={styles.projectTitle}>{project.title}</Text>
-          <Text style={styles.projectDescription}>{project.description}</Text>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => Linking.openURL(project.githubUrl)}
-          >
-            <Text style={styles.buttonText}>Ver no GitHub</Text>
-          </TouchableOpacity>
-        </View>
-      ))}
-    </View>
+    <ScrollView style={styles.scrollContainer}>
+      <View style={styles.container}>
+        <Text style={styles.title}>Projetos</Text>
+        {projects.map((project, index) => (
+          <View key={index} style={styles.projectContainer}>
+            <Image source={project.image} style={styles.projectImage} />
+            <Text style={styles.projectTitle}>{project.title}</Text>
+            <Text style={styles.projectDescription}>{project.description}</Text>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => Linking.openURL(project.githubUrl)}
+            >
+              <Text style={styles.buttonText}>Ver no GitHub</Text>
+            </TouchableOpacity>
+          </View>
+        ))}
+      </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  scrollContainer: {
+    flex: 1,
+    backgroundColor: "#f5f5f5",
+  },
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#f5f5f5",
+    alignItems: "center",
+    paddingBottom: 120,
   },
   title: {
     fontSize: 30,
@@ -95,12 +101,12 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
     shadowOffset: { width: 0, height: 2 },
     elevation: 3,
-    justifyContent: "center", 
     alignItems: "center",
+    paddingBottom: 20, 
   },
   projectImage: {
     width: "100%",
-    height: 200,
+    height: 120,
     borderRadius: 10,
     marginBottom: 15,
     resizeMode: "cover",
@@ -109,11 +115,13 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 10,
+    textAlign: "center",
   },
   projectDescription: {
     fontSize: 16,
     marginBottom: 15,
     color: "#555",
+    textAlign: "center",
   },
   button: {
     backgroundColor: "#007BFF",
